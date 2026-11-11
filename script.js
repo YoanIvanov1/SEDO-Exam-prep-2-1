@@ -25,3 +25,10 @@ list.addEventListener('dblclick', e => {
     e.target.remove();
   }
 });
+
+// Clear completed tasks
+const clearCompletedBtn = document.getElementById('clear-completed-btn');
+
+clearCompletedBtn.addEventListener('click', () => {
+  list.querySelectorAll('li.completed').forEach(li => li.remove());
+});
