@@ -12,18 +12,18 @@ function addTask() {
   input.value = '';
 }
 
-addBtn.addEventListener('click', addTask);
-
-// Toggle complete
-list.addEventListener('click', e => {
+function toggleComplete(e) {
   if (e.target.tagName === 'LI') {
     e.target.classList.toggle('completed');
   }
-});
+}
 
-// Delete on double-click
-list.addEventListener('dblclick', e => {
+function deleteTask(e) {
   if (e.target.tagName === 'LI') {
     e.target.remove();
   }
-});
+}
+
+addBtn.addEventListener('click', addTask);
+list.addEventListener('click', toggleComplete);
+list.addEventListener('dblclick', deleteTask);
