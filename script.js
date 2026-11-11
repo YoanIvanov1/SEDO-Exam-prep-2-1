@@ -4,13 +4,15 @@ const input = document.getElementById('task-input');
 const addBtn = document.getElementById('add-btn');
 const list = document.getElementById('task-list');
 
-addBtn.addEventListener('click', () => {
+function addTask() {
   const text = input.value;
   const li = document.createElement('li');
   li.textContent = text;
   list.appendChild(li);
   input.value = '';
-});
+}
+
+addBtn.addEventListener('click', addTask);
 
 // Toggle complete
 list.addEventListener('click', e => {
