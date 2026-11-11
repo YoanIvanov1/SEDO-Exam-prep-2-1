@@ -7,13 +7,20 @@ const list = document.getElementById('task-list');
 addBtn.addEventListener('click', () => {
   const text = input.value.trim();
   if (!text) {
+    input.classList.add('invalid');
+    input.focus();
     return;
   }
+  input.classList.remove('invalid');
 
   const li = document.createElement('li');
   li.textContent = text;
   list.appendChild(li);
   input.value = '';
+});
+
+input.addEventListener('input', () => {
+  input.classList.remove('invalid');
 });
 
 // Toggle complete
