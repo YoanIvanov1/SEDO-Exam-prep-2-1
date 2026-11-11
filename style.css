@@ -40,3 +40,7 @@ body {
   text-decoration: line-through;
   color: #888;
 }
+#task-input.invalid {
+  border: 1px solid #d33;
+  outline-color: #d33;
+}
